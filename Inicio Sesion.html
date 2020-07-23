@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+	<title>Marquitos Movies</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="Estilo.css">
+  </head>
+  
+  <body class="body" style="display: flex; flex-direction: column;">
+  
+	<div class="header" style="text-align:center">
+		<img src="Logo.png" width="170px" heigth="170px" />
+	</div>
+  
+	<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+			<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+	
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="navbar-nav mr-auto mx-auto mt-2 mt-md-0">
+			<li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="Noticias.html">Noticias</a></li>
+			<li class="nav-item"><a class="nav-link" href="Recomendaciones.html">Recomendaciones</a></li>
+			<li class="nav-item"><a class="nav-link" href="Registro.html">Registro</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item activa"><a  class="nav-link" href="Inicio Secion.html"><i class="fas fa-edit"></i>Iniciar Sesión </a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<br>
+	
+	<div class="container forma">
+		<form style="text-align:center" name="Registro" onsubmit="validarForm()">
+			<br>
+			<h1 style="text-align:center"> Inicio sesión </h1>
+			<div class="form-group"> 
+				<label for="Usuario"> Usuario: </label> 
+				<input type="text" class="form-control" id="Usuario" placeholder="Elmox" />
+			</div>
+			<div class="form-group"> 
+				<label for="Pass"> Contraseña: </label> 
+				<input type="password" class="form-control" id="Pass" placeholder="******" />
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Iniciar sesión"/>
+			</div>
+			<br>
+		</form>
+	</div>
+	
+	<br>
+	
+	<div class="footer">
+		<div style="text-align:center;">
+			<p>Todos derechos de este sitio estan reservados a </p>
+			<a href="https://www.facebook.com/marcosblua" target="_blank">
+				<img src="https://img.icons8.com/nolan/64/facebook.png" height="30px"></img>
+				Marcos Blua
+			</a>
+			<a href="https://www.instagram.com/marcosblua/" target="_blank">
+				<img src="https://img.icons8.com/nolan/64/instagram-new.png" height="30px"></img>
+				@marcosblua
+			</a>
+			<a href="https://twitter.com/marcosblua" target="_blank">
+				<img src="https://img.icons8.com/nolan/64/twitter-circled.png" height="30px"></img>
+				@marcosblua
+			</a>
+	    </div>
+	</div>
+	
+	<script>
+	function validarForm() {
+		var mensaje = "Los siguientes datos no estan completos: ";
+		var vuelta = true;
+		var	x = document.forms["Registro"]["Usuario"].value;
+		if (x == "") {
+			mensaje += "Nombre de usuario, ";
+			vuelta = false;
+		}
+		x = document.forms["Registro"]["Pass"].value;
+		if (x == "") {
+			mensaje += "Contraseña, ";
+			vuelta = false;
+		}
+		if (!vuelta){
+			alert(mensaje);
+		}else{
+			alert("Se inicia sesión");
+		}
+		
+		return vuelta;
+	}
+	</script>
+	
+  </body>
+  
+</html>
